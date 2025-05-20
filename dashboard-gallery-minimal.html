@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #222222;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #00915a;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            margin: 0;
+            color: white;
+            font-weight: 300;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-flow: column; /* Force le flux vertical */
+            gap: 40px;
+            height: fit-content;
+        }
+        
+        .project-card {
+            /* Ajustements pour la disposition verticale */
+            max-width: 100%;
+            height: fit-content;
+            margin-bottom: 40px;
+            background-color: white;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+            border-radius: 8px;
+            overflow: hidden;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .project-info {
+            padding: 24px;
+        }
+        
+        .project-title {
+            font-size: 18px;
+            margin: 0 0 12px 0;
+            color: #00915a;
+            font-weight: 500;
+        }
+        
+        .project-desc {
+            font-size: 15px;
+            margin: 0;
+            color: #222222;
+            font-weight: 400;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #222222;
+            font-size: 14px;
+            margin-top: 60px;
+            border-top: 1px solid #eee;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            header {
+                background-color: #00915a !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .project-card {
+                max-height: none;
+                height: auto;
+                break-inside: avoid;
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #eee;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-flow: column;
+                gap: 30px;
+                height: 100%;
+            }
+            
+            .project-img {
+                max-height: none;
+                height: auto;
+            }
+            
+            @page {
+                margin: 1.5cm;
+                size: A4 portrait;
+            }
+            
+            .project-title {
+                color: #00915a !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>POWER BI PORTFOLIO</h1>
+    </header>
+    
+    <div class="container">
+        <div class="gallery">
+            <div class="project-card">
+                <img src="https://raw.githubusercontent.com/mathisc8/Portfolio-PBI/main/images/Image5.png" alt="Weekly Project Tracking" class="project-img">
+                <div class="project-info">
+                    <h3 class="project-title">Advanced Project Monitoring</h3>
+                    <p class="project-desc">Main view with weekly project tracking featuring custom HTML/CSS tooltips for detailed insights.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://raw.githubusercontent.com/mathisc8/Portfolio-PBI/main/images/Image3.png" alt="PowerBI with Power App" class="project-img">
+                <div class="project-info">
+                    <h3 class="project-title">Integrated Power App Solution</h3>
+                    <p class="project-desc">PowerBI dashboard with embedded Power App for context-aware automated email notifications.</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="https://raw.githubusercontent.com/mathisc8/Portfolio-PBI/main/images/Image4.png" alt="Project Status Dashboard" class="project-img">
+                <div class="project-info">
+                    <h3 class="project-title">Project Status Tracker</h3>
+                    <p class="project-desc">Calendar-integrated dashboard tracking open/closed project statuses with timeline correlation.</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="https://raw.githubusercontent.com/mathisc8/Portfolio-PBI/main/images/Image6.png" alt="ENEDIS Energy Dashboard" class="project-img">
+                <div class="project-info">
+                    <h3 class="project-title">ENEDIS Energy Distribution Analysis</h3>
+                    <p class="project-desc">Geographical and statistical analysis of renewable energy distribution across France.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://raw.githubusercontent.com/mathisc8/Portfolio-PBI/main/images/Image1.png" alt="DAX Measure Library" class="project-img">
+                <div class="project-info">
+                    <h3 class="project-title">HTML DAX Visualization Library</h3>
+                    <p class="project-desc">Custom HTML DAX visualization library for enhanced dashboard components.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Power BI Dashboard Portfolio - CHAMAYOU Mathis </p>
+    </footer>
+</body>
+</html>
