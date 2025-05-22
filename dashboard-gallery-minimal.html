@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power BI Portfolio | CHAMAYOU Mathis</title>
     <style>
-        /* --- STYLES GÉNÉRAUX --- */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         
         :root {
-            --primary: #00915a;      /* Vert BNP Paribas */
-            --primary-dark: #006a40; /* Vert foncé BNP */
-            --secondary: #43b02a;    /* Vert clair BNP */
-            --light: #F3FFF9;        /* Vert très clair */
-            --dark: #253525;         /* Vert/gris foncé */
-            --gray: #E4EFE6;         /* Gris-vert clair */
+            --volvo-blue: #003057;
+            --volvo-blue-light: #004080;
+            --volvo-silver: #F8FAFC;
+            --volvo-white: #FFFFFF;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
         }
         
         * {
@@ -24,200 +23,83 @@
         }
         
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: white;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            background: var(--volvo-white);
+            color: var(--text-primary);
+            line-height: 1.5;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 40px;
         }
         
-        /* --- STYLES POUR ÉCRAN --- */
-        @media screen {
-            /* Header */
-            .header {
-                background: var(--primary);
-                padding: 40px 0;
-                text-align: center;
-                position: relative;
-                margin-bottom: 60px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            }
-            
-            .logo {
-                font-size: 18px;
-                color: white;
-                letter-spacing: 2px;
-                margin-bottom: 15px;
-                text-transform: uppercase;
-                display: block;
-                font-weight: 700;
-            }
-            
-            .header h1 {
-                color: white;
-                font-size: 48px;
-                font-weight: 600;
-                letter-spacing: 1px;
-                margin-bottom: 15px;
-            }
-            
-            .header p {
-                color: rgba(255,255,255,0.9);
-                font-size: 18px;
-                max-width: 700px;
-                margin: 0 auto;
-            }
-            
-            /* Galerie */
-            .gallery {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-                align-items: start;
-                margin-bottom: 60px;
-            }
-            
-            /* Carte de dashboard */
-            .dashboard-card {
-                background-color: white;
-                border-radius: 0;
-                overflow: hidden;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-                transition: all 0.3s ease;
-                position: relative;
-                border: 1px solid #eee;
-            }
-            
-            .dashboard-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            }
-            
-            .dashboard-img-container {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .dashboard-img {
-                width: 100%;
-                height: auto;
-                display: block;
-                transition: transform 0.5s ease;
-            }
-            
-            .dashboard-card:hover .dashboard-img {
-                transform: scale(1.03);
-            }
-            
-            .dashboard-badge {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                background: var(--primary);
-                color: white;
-                padding: 6px 12px;
-                border-radius: 0;
-                font-size: 12px;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            
-            .dashboard-info {
-                padding: 25px;
-                border-top: 1px solid #eee;
-                position: relative;
-            }
-            
-            .dashboard-title {
-                font-size: 20px;
-                margin: 0 0 12px 0;
-                color: var(--primary);
-                font-weight: 600;
-            }
-            
-            .dashboard-desc {
-                font-size: 15px;
-                margin: 0;
-                color: #555;
-                line-height: 1.7;
-            }
-            
-            /* Section titre */
-            .section-title {
-                text-align: center;
-                margin-bottom: 50px;
-            }
-            
-            .section-title h2 {
-                font-size: 32px;
-                color: var(--primary-dark);
-                margin-bottom: 15px;
-                position: relative;
-                display: inline-block;
-            }
-            
-            .section-title h2:after {
-                content: "";
-                display: block;
-                width: 60px;
-                height: 2px;
-                background: var(--primary);
-                margin: 15px auto 0;
-            }
-            
-            .section-title p {
-                color: #555;
-                max-width: 700px;
-                margin: 0 auto;
-            }
-            
-            /* Pied de page */
-            footer {
-                background: var(--primary-dark);
-                color: white;
-                padding: 50px 0 30px;
-                text-align: center;
-                margin-top: 80px;
-            }
-            
-            .footer-content {
-                max-width: 700px;
-                margin: 0 auto;
-            }
-            
-            .footer-logo {
-                font-size: 24px;
-                font-weight: 600;
-                letter-spacing: 1px;
-                margin-bottom: 20px;
-                display: block;
-            }
-            
-            .footer-text {
-                margin-bottom: 30px;
-                opacity: 0.9;
-            }
-            
-            .footer-copyright {
-                padding-top: 30px;
-                border-top: 1px solid rgba(255,255,255,0.1);
-                font-size: 14px;
-                opacity: 0.7;
-            }
+        /* --- HEADER --- */
+        .header {
+            background: var(--volvo-blue);
+            padding: 60px 0;
+            text-align: center;
         }
         
-        /* Modal pour zoom image */
+        .header h1 {
+            color: var(--volvo-white);
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .header p {
+            color: rgba(255,255,255,0.8);
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        /* --- MAIN CONTENT --- */
+        .main {
+            padding: 80px 0;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 60px;
+        }
+        
+        .project {
+            background: var(--volvo-white);
+            border: 1px solid #E5E7EB;
+            transition: transform 0.2s ease;
+        }
+        
+        .project:hover {
+            transform: translateY(-4px);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+        
+        .project-info {
+            padding: 32px;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--volvo-blue);
+            margin-bottom: 8px;
+        }
+        
+        .project-desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        /* --- MODAL --- */
         .modal {
             display: none;
             position: fixed;
@@ -226,14 +108,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            cursor: pointer;
+            background: rgba(0,0,0,0.9);
         }
 
         .modal-content {
             margin: auto;
             display: block;
-            max-width: 90%;
+            max-width: 95%;
             max-height: 90vh;
             position: relative;
             top: 50%;
@@ -244,97 +125,91 @@
             position: absolute;
             right: 25px;
             top: 25px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
+            color: white;
+            font-size: 35px;
             cursor: pointer;
         }
 
-        .modal.fade-in {
-            animation: fadeIn 0.3s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {opacity: 0}
-            to {opacity: 1}
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .header h1 {
+                font-size: 36px;
+            }
+            
+            .main {
+                padding: 60px 0;
+            }
+            
+            .project-info {
+                padding: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Élément pour précharger les polices -->
-    <div class="font-preload">.</div>
-    
-    <!-- En-tête pour affichage écran -->
     <header class="header">
         <div class="container">
-            <span class="logo">CHAMAYOU Mathis</span>
-            <h1>POWER BI PORTFOLIO</h1>
+            <h1>CHAMAYOU Mathis</h1>
+            <p>Power BI Portfolio</p>
         </div>
     </header>
-    
-    <!-- Conteneur principal -->
-    <div class="container">
-        <!-- Section titre -->
-        <div class="section-title">
-            <h2>Power BI Dashboards</h2>
-            <p>Custom-built Power BI visualization solutions</p>
-        </div>
-        
-        <!-- Mise en page normale pour écran -->
-        <div class="gallery">
-            <div class="dashboard-card">
-                <div class="dashboard-img-container">
-                    <img src="Image5.png" alt="Weekly Project Tracking" class="dashboard-img">
-                </div>
-                <div class="dashboard-info">
-                    <h3 class="dashboard-title">Advanced Project Monitoring</h3>
-                    <p class="dashboard-desc">Main view with weekly project tracking featuring custom HTML/CSS tooltips for detailed insights.</p>
-                </div>
-            </div>
 
-            <div class="dashboard-card">
-                <div class="dashboard-img-container">
-                    <img src="Image3.png" alt="PowerBI with Power App" class="dashboard-img">
+    <main class="main">
+        <div class="container">
+            <div class="gallery">
+                <div class="project">
+                    <img src="Image5.png" alt="Monitoring Avancé de Projets" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Monitoring Avancé de Projets</h3>
+                        <p class="project-desc">Suivi hebdomadaire avec tooltips HTML/CSS personnalisés</p>
+                    </div>
                 </div>
-                <div class="dashboard-info">
-                    <h3 class="dashboard-title">Integrated Power App Solution</h3>
-                    <p class="dashboard-desc">PowerBI dashboard with embedded Power App for context-aware automated email notifications.</p>
-                </div>
-            </div>
-            
-            <div class="dashboard-card">
-                <div class="dashboard-img-container">
-                    <img src="Image4.png" alt="Project Status Dashboard" class="dashboard-img">
-                </div>
-                <div class="dashboard-info">
-                    <h3 class="dashboard-title">Project Status Tracker</h3>
-                    <p class="dashboard-desc">Calendar-integrated dashboard tracking open/closed project statuses with timeline correlation.</p>
-                </div>
-            </div>
-            
-            <div class="dashboard-card">
-                <div class="dashboard-img-container">
-                    <img src="Image6.png" alt="ENEDIS Energy Dashboard" class="dashboard-img">
-                </div>
-                <div class="dashboard-info">
-                    <h3 class="dashboard-title">ENEDIS Energy Distribution Analysis</h3>
-                    <p class="dashboard-desc">Geographical and statistical analysis of renewable energy distribution across France.</p>
-                </div>
-            </div>
 
-            <div class="dashboard-card">
-                <div class="dashboard-img-container">
-                    <img src="Image1.png" alt="DAX Measure Library" class="dashboard-img">
+                <div class="project">
+                    <img src="Image3.png" alt="Solution Power App Intégrée" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Solution Power App Intégrée</h3>
+                        <p class="project-desc">Dashboard avec notifications email automatisées</p>
+                    </div>
                 </div>
-                <div class="dashboard-info">
-                    <h3 class="dashboard-title">HTML DAX Visualization Library</h3>
-                    <p class="dashboard-desc">Custom HTML DAX visualization library for enhanced dashboard components.</p>
+                
+                <div class="project">
+                    <img src="Image4.png" alt="Suivi de Statut de Projets" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Suivi de Statut de Projets</h3>
+                        <p class="project-desc">Intégration calendrier avec corrélation temporelle</p>
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <img src="Image6.png" alt="Analyse Distribution Énergie ENEDIS" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Analyse Distribution Énergie ENEDIS</h3>
+                        <p class="project-desc">Analyse géographique de l'énergie renouvelable</p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <img src="Image1.png" alt="Bibliothèque de Visualisation HTML DAX" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Bibliothèque HTML DAX</h3>
+                        <p class="project-desc">Composants personnalisés pour tableaux de bord</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Modal pour zoom image -->
+    <!-- Modal -->
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImg">
@@ -345,16 +220,13 @@
         const modalImg = document.getElementById("modalImg");
         const closeBtn = document.getElementsByClassName("close")[0];
 
-        // Ajouter le listener sur toutes les images de la galerie
-        document.querySelectorAll('.dashboard-img').forEach(img => {
+        document.querySelectorAll('.project-image').forEach(img => {
             img.addEventListener('click', function() {
                 modal.style.display = "block";
                 modalImg.src = this.src;
-                modal.classList.add('fade-in');
             });
         });
 
-        // Fermer la modal en cliquant sur X ou en dehors
         closeBtn.onclick = function() {
             modal.style.display = "none";
         }
@@ -365,9 +237,8 @@
             }
         }
 
-        // Fermer avec la touche Echap
         document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape" && modal.style.display === "block") {
+            if (e.key === "Escape") {
                 modal.style.display = "none";
             }
         });
