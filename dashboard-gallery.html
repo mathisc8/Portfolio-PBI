@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power BI Portfolio | CHAMAYOU Mathis</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
         
         :root {
             --volvo-blue: #003057;
-            --volvo-blue-light: #004080;
-            --volvo-silver: #F8FAFC;
             --volvo-white: #FFFFFF;
-            --text-primary: #1F2937;
-            --text-secondary: #6B7280;
+            --background: #FAFAFA;
+            --text-primary: #1A1A1A;
+            --text-secondary: #666666;
+            --border: #E8E8E8;
         }
         
         * {
@@ -24,7 +24,7 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--volvo-white);
+            background: var(--background);
             color: var(--text-primary);
             line-height: 1.5;
         }
@@ -38,42 +38,37 @@
         /* --- HEADER --- */
         .header {
             background: var(--volvo-blue);
-            padding: 60px 0;
+            padding: 100px 0;
             text-align: center;
         }
         
         .header h1 {
             color: var(--volvo-white);
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 12px;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
         
         .header p {
             color: rgba(255,255,255,0.8);
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
         }
         
         /* --- MAIN CONTENT --- */
         .main {
-            padding: 80px 0;
+            padding: 100px 0;
         }
         
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
             gap: 60px;
         }
         
         .project {
             background: var(--volvo-white);
-            border: 1px solid #E5E7EB;
-            transition: transform 0.2s ease;
-        }
-        
-        .project:hover {
-            transform: translateY(-4px);
+            border: 1px solid var(--border);
         }
         
         .project-image {
@@ -84,19 +79,20 @@
         }
         
         .project-info {
-            padding: 32px;
+            padding: 40px;
         }
         
         .project-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
-            color: var(--volvo-blue);
-            margin-bottom: 8px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
         }
         
         .project-desc {
             font-size: 15px;
             color: var(--text-secondary);
+            line-height: 1.6;
         }
         
         /* --- MODAL --- */
@@ -114,7 +110,7 @@
         .modal-content {
             margin: auto;
             display: block;
-            max-width: 95%;
+            max-width: 90%;
             max-height: 90vh;
             position: relative;
             top: 50%;
@@ -123,11 +119,13 @@
 
         .close {
             position: absolute;
-            right: 25px;
-            top: 25px;
-            color: white;
-            font-size: 35px;
+            right: 30px;
+            top: 30px;
+            color: var(--volvo-white);
+            font-size: 30px;
             cursor: pointer;
+            background: none;
+            border: none;
         }
 
         /* --- RESPONSIVE --- */
@@ -141,16 +139,30 @@
                 gap: 40px;
             }
             
-            .header h1 {
-                font-size: 36px;
+            .header {
+                padding: 80px 0;
             }
             
             .main {
-                padding: 60px 0;
+                padding: 80px 0;
             }
             
             .project-info {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-info {
                 padding: 24px;
+            }
+            
+            .project-title {
+                font-size: 16px;
+            }
+            
+            .project-desc {
+                font-size: 14px;
             }
         }
     </style>
@@ -167,42 +179,42 @@
         <div class="container">
             <div class="gallery">
                 <div class="project">
-                    <img src="Image5.png" alt="Monitoring Avancé de Projets" class="project-image">
+                    <img src="Image5.png" alt="Advanced Project Monitoring" class="project-image">
                     <div class="project-info">
-                        <h3 class="project-title">Monitoring Avancé de Projets</h3>
-                        <p class="project-desc">Suivi hebdomadaire avec tooltips HTML/CSS personnalisés</p>
+                        <h3 class="project-title">Advanced Project Monitoring</h3>
+                        <p class="project-desc">Main view with weekly project tracking featuring custom HTML/CSS tooltips for detailed insights.</p>
                     </div>
                 </div>
 
                 <div class="project">
-                    <img src="Image3.png" alt="Solution Power App Intégrée" class="project-image">
+                    <img src="Image3.png" alt="Integrated Power App Solution" class="project-image">
                     <div class="project-info">
-                        <h3 class="project-title">Solution Power App Intégrée</h3>
-                        <p class="project-desc">Dashboard avec notifications email automatisées</p>
+                        <h3 class="project-title">Integrated Power App Solution</h3>
+                        <p class="project-desc">PowerBI dashboard with embedded Power App for context-aware automated email notifications.</p>
                     </div>
                 </div>
                 
                 <div class="project">
-                    <img src="Image4.png" alt="Suivi de Statut de Projets" class="project-image">
+                    <img src="Image4.png" alt="Project Status Tracker" class="project-image">
                     <div class="project-info">
-                        <h3 class="project-title">Suivi de Statut de Projets</h3>
-                        <p class="project-desc">Intégration calendrier avec corrélation temporelle</p>
+                        <h3 class="project-title">Project Status Tracker</h3>
+                        <p class="project-desc">Calendar-integrated dashboard tracking open/closed project statuses with timeline correlation.</p>
                     </div>
                 </div>
                 
                 <div class="project">
-                    <img src="Image6.png" alt="Analyse Distribution Énergie ENEDIS" class="project-image">
+                    <img src="Image6.png" alt="ENEDIS Energy Distribution Analysis" class="project-image">
                     <div class="project-info">
-                        <h3 class="project-title">Analyse Distribution Énergie ENEDIS</h3>
-                        <p class="project-desc">Analyse géographique de l'énergie renouvelable</p>
+                        <h3 class="project-title">ENEDIS Energy Distribution Analysis</h3>
+                        <p class="project-desc">Geographical and statistical analysis of renewable energy distribution across France.</p>
                     </div>
                 </div>
 
                 <div class="project">
-                    <img src="Image1.png" alt="Bibliothèque de Visualisation HTML DAX" class="project-image">
+                    <img src="Image1.png" alt="HTML DAX Visualization Library" class="project-image">
                     <div class="project-info">
-                        <h3 class="project-title">Bibliothèque HTML DAX</h3>
-                        <p class="project-desc">Composants personnalisés pour tableaux de bord</p>
+                        <h3 class="project-title">HTML DAX Visualization Library</h3>
+                        <p class="project-desc">Custom HTML DAX visualization library for enhanced dashboard components.</p>
                     </div>
                 </div>
             </div>
